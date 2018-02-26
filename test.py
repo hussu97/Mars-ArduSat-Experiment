@@ -29,6 +29,7 @@ def checkUVLight():
 def lineGraph(xlabel,ylabel,title,X,y):
     plt.scatter(X,y,color='red')
     plt.plot(X,y,color = 'blue')
+    plt.gca().set_ylim([-20,120])
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
@@ -53,8 +54,8 @@ class FolderMonitor(FileSystemEventHandler):
         if(len(tempir) > 5 and (abs((sum(tempir[-5:]) / 5) - TEMP_IR_BASE) / TEMP_IR_BASE) > 0.02):
             checkMag()
             checkUVLight()
-        if(len(dist)>20):
-            print(graph)
+        if(len(dist)>5):
+            print('hi')
             lineGraph('Distance (m)','Temperature (C)','IR output',dist,tempir)
 
 
