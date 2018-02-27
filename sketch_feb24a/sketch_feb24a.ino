@@ -19,17 +19,17 @@ void setup(){
   orient.begin();
   irtemp.begin();
   uv.begin();
-  gyr.begin();
 }
 
 void loop(){
 
-  serialConnection.println(accel.readToJSON("accel"));
-  serialConnection.println(irtemp.readToJSON("irtemp"));
-  serialConnection.println(uv.readToJSON("uv"));
-  serialConnection.println(orient.readToJSON("orient"));
-  serialConnection.println(gyr.readToJSON("gyr"));
-  serialConnection.println(irtemp.readToJSON("irtemp"));
+  accel.read();
+  mag.read();
+  orient.read();
+  irtemp.read();
+  uv.read();
+  
+  serialConnection.println(valuesToCSV('reading',mag.x,mag.y,mag.z,irtemp.t,uv.uvindex,orient.roll,orient.pitch));
   
   delay(1000);
 }

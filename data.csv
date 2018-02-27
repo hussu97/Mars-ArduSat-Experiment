@@ -1,1 +1,1 @@
-x magnetic (uT),y magnetic (uT),z magnetic (uT),temp IR (C), UVLight (mW/cm^2), distance (m)
+x magnetic (uT),y magnetic (uT),z magnetic (uT),temp IR (C), UVLight (mW/cm^2), orientx (deg),orienty(deg)
